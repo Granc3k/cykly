@@ -11,14 +11,8 @@ function vypisPosloupnosti() {
   for (let i = 0; i < 10; i ++) {
     s = s + i + " ";
   }
-
-
-
-
   document.getElementById("vystup").innerHTML = s;
 }
-
-
 
 function soucetPosloupnosti() {
   let num = document.getElementById("num").valueAsNumber;
@@ -47,4 +41,31 @@ function soucetPosloupnosti() {
       document.getElementById("verdikt").innerHTML="Dle vzorce je to vpořádku :) Clap";
     }
   }
+}
+
+
+
+
+function kvadraticka_rce() {
+  let a = document.getElementById("a").valueAsNumber;
+  let b = document.getElementById("b").valueAsNumber;
+  let c = document.getElementById("c").valueAsNumber;
+  let dis = (b*b)-(4*a*c);
+  if (dis < 0){
+    document.getElementById("diskriminant").innerHTML="Rovnice nemá řešení PepeHands";
+    document.getElementById("x1").innerHTML="Neexistuje";
+    document.getElementById("x2").innerHTML="Neexistuje";
+  } else if (dis == 0){
+    document.getElementById("diskriminant").innerHTML=dis;
+    x1 = -b/(2*a);
+    document.getElementById("x1").innerHTML=x1;
+    document.getElementById("x2").innerHTML="Neexistuje"
+  } else{
+    document.getElementById("diskriminant").innerHTML=dis;
+    x1 = (-b + Math.sqrt(dis))/(2*a);
+    x2 = (-b - Math.sqrt(dis))/(2*a);
+    document.getElementById("x1").innerHTML=x1;
+    document.getElementById("x2").innerHTML=x2;
+  }
+
 }
